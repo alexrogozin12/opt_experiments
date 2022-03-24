@@ -6,7 +6,8 @@ from .base import BaseSmoothOracle
 class LinearRegressionL2Oracle(BaseSmoothOracle):
     """
     Linear regression oracle with L2 regularization.
-    1/2 \|Ax - b\|_2^2 + regcoef * \|x\|_2^2.
+    reduction = 'sum': 1/2 \|Ax - b\|_2^2 + regcoef * \|x\|_2^2.
+    reduction = 'mean': 1/(2*A.shape[0]) \|Ax - b\|_2^2 + regcoef * \|x\|_2^2.
 
     Parameters
     ----------
